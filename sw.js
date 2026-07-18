@@ -1,4 +1,4 @@
-const CACHE='flightradar-v2-20260718-scrollfix1';
+const CACHE='flightradar-v2-20260718-scrollfix2';
 const CORE=['./','./index.html','./manifest.webmanifest','./icon.svg'];
 self.addEventListener('install',event=>{
   event.waitUntil(caches.open(CACHE).then(cache=>cache.addAll(CORE)));

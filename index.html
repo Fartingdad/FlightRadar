@@ -121,6 +121,23 @@
       .bottom,.drawer,.details{left:50%;right:auto;width:540px;transform:translate(-50%,calc(100% + 30px))}
       .bottom{transform:translateX(-50%)} .drawer.open,.details.open{transform:translate(-50%,0)}
     }
+
+    /* Robust iPhone panel scrolling */
+    .drawer,.details,.bottom{
+      -webkit-overflow-scrolling:touch!important;
+      overscroll-behavior-y:contain!important;
+      touch-action:pan-y!important;
+    }
+    .drawer,.details{
+      max-height:78dvh!important;
+      overflow-y:auto!important;
+      overflow-x:hidden!important;
+    }
+    .toolbar{
+      max-height:42dvh;overflow-y:auto;overflow-x:hidden;
+      -webkit-overflow-scrolling:touch;touch-action:pan-y!important;
+    }
+    .drawer .filter-grid,.details .detail-grid{touch-action:pan-y!important;}
   </style>
 </head>
 <body>
@@ -248,6 +265,26 @@
     };
 
     const map = L.map('map',{zoomControl:false,attributionControl:true,preferCanvas:true}).setView([59.3293,18.0686],7);
+
+    function bindPanelScrollLock(el){
+      const stopMap = event => {
+        event.stopPropagation();
+        if(map.dragging.enabled()) map.dragging.disable();
+      };
+      const resumeMap = () => setTimeout(() => {
+        if(!map.dragging.enabled()) map.dragging.enable();
+      }, 80);
+      ['touchstart','touchmove','pointerdown','pointermove','wheel'].forEach(type =>
+        el.addEventListener(type, stopMap, {passive:type !== 'wheel'})
+      );
+      ['touchend','touchcancel','pointerup','pointercancel','mouseleave'].forEach(type =>
+        el.addEventListener(type, resumeMap, {passive:true})
+      );
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('.drawer,.details,.bottom,.topbar,.left-actions').forEach(bindPanelScrollLock);
+    });
     L.control.zoom({position:'topright'}).addTo(map);
     ['filterDrawer','details'].forEach(id=>{
       const el=$(id);
