@@ -1,8 +1,9 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-<rect width="512" height="512" rx="112" fill="#071018"/>
-<circle cx="256" cy="256" r="178" fill="none" stroke="#254756" stroke-width="10"/>
-<circle cx="256" cy="256" r="116" fill="none" stroke="#254756" stroke-width="8"/>
-<path d="M256 62v388M62 256h388" stroke="#254756" stroke-width="8" opacity=".8"/>
-<path d="M256 90c18 0 30 14 30 31v82l124 72v34l-124-37v88l39 28v24l-69-17-69 17v-24l39-28v-88l-124 37v-34l124-72v-82c0-17 12-31 30-31z" fill="#54e0ff"/>
-<circle cx="256" cy="256" r="12" fill="#eaffff"/>
+<rect width="512" height="512" rx="110" fill="#03090d"/>
+<circle cx="256" cy="256" r="180" fill="none" stroke="#173744" stroke-width="10"/>
+<circle cx="256" cy="256" r="120" fill="none" stroke="#173744" stroke-width="8"/>
+<circle cx="256" cy="256" r="58" fill="none" stroke="#173744" stroke-width="7"/>
+<path d="M256 66v380M66 256h380" stroke="#173744" stroke-width="7"/>
+<path d="M256 78c17 0 29 13 29 30v96l129 74v35l-129-38v87l42 30v24l-71-18-71 18v-24l42-30v-87L98 313v-35l129-74v-96c0-17 12-30 29-30z" fill="#53e0ff"/>
+<circle cx="256" cy="256" r="11" fill="#dffcff"/>
 </svg>
