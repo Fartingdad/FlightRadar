@@ -34,3 +34,8 @@ På iPhone:
 ## Observera
 
 Internet krävs för karta och flygdata. Täckningen beror på tillgängliga ADS-B/MLAT-mottagare. Appen är för hobby och information, inte navigation eller flygsäkerhetskritisk användning.
+
+
+## Uppdatering: iPhone-scroll
+
+Panelerna, filtermenyn och flygdetaljerna kan nu scrollas vertikalt utan att kartan flyttas bakom dem.
